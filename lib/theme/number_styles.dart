@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/// A theme extension that provides text styles specifically for numbers
+/// with tabular figures enabled. This ensures that numbers align properly
+/// in tables, financial data, and other numerical displays.
 @immutable
 class NumberStyles extends ThemeExtension<NumberStyles> {
   const NumberStyles({
@@ -8,8 +11,16 @@ class NumberStyles extends ThemeExtension<NumberStyles> {
     required this.bigBoldNums,
   });
 
+  /// Large numbers with tabular figures
+  /// Font size: 20, Weight: Bold (700)
   final TextStyle bigNums;
+
+  /// Paragraph-sized bold numbers with tabular figures
+  /// Font size: 15, Weight: Bold (700)
   final TextStyle pBoldNums;
+
+  /// Large bold numbers with tabular figures
+  /// Font size: 16, Weight: Bold (700)
   final TextStyle bigBoldNums;
 
   @override

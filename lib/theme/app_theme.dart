@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'text_styles.dart';
 import 'number_styles.dart';
 
+/// The main theme configuration for the application.
+/// This class provides a dark theme that uses the Satoshi font family
+/// and implements a complete typography system with proper text colors
+/// and number styles.
 class AppTheme {
+  /// Returns the light theme configuration with dark mode colors.
+  /// All text styles are properly mapped to Material Theme text styles
+  /// and include the correct text color.
   static ThemeData get lightTheme {
     const textColor = Colors.white;
 
-    TextStyle _withColor(TextStyle style) {
+    TextStyle withColor(TextStyle style) {
       return style.copyWith(color: textColor);
     }
 
@@ -18,33 +25,33 @@ class AppTheme {
       ),
       textTheme: TextTheme(
         // Headings
-        displayLarge: _withColor(AppTextStyles.h1),
-        displayMedium: _withColor(AppTextStyles.h2),
-        displaySmall: _withColor(AppTextStyles.h3),
-        headlineMedium: _withColor(AppTextStyles.h4),
-        headlineSmall: _withColor(AppTextStyles.h5),
+        displayLarge: withColor(AppTextStyles.h1),
+        displayMedium: withColor(AppTextStyles.h2),
+        displaySmall: withColor(AppTextStyles.h3),
+        headlineMedium: withColor(AppTextStyles.h4),
+        headlineSmall: withColor(AppTextStyles.h5),
 
         // Body text
-        titleLarge: _withColor(AppTextStyles.xl),
-        titleMedium: _withColor(AppTextStyles.xlBold),
-        bodyLarge: _withColor(AppTextStyles.big),
-        bodyMedium: _withColor(AppTextStyles.p),
-        bodySmall: _withColor(AppTextStyles.small),
+        titleLarge: withColor(AppTextStyles.xl),
+        titleMedium: withColor(AppTextStyles.xlBold),
+        bodyLarge: withColor(AppTextStyles.big),
+        bodyMedium: withColor(AppTextStyles.p),
+        bodySmall: withColor(AppTextStyles.small),
 
         // Special styles
-        labelLarge: _withColor(AppTextStyles.bigBold),
-        labelMedium: _withColor(AppTextStyles.pBold),
-        labelSmall: _withColor(AppTextStyles.smallBold),
+        labelLarge: withColor(AppTextStyles.bigBold),
+        labelMedium: withColor(AppTextStyles.pBold),
+        labelSmall: withColor(AppTextStyles.smallBold),
 
         // Overline and tag
-        titleSmall: _withColor(AppTextStyles.tag),
-        headlineLarge: _withColor(AppTextStyles.overline),
+        titleSmall: withColor(AppTextStyles.tag),
+        headlineLarge: withColor(AppTextStyles.overline),
       ),
       extensions: [
         NumberStyles(
-          bigNums: _withColor(AppTextStyles.bigNums),
-          pBoldNums: _withColor(AppTextStyles.pBoldNums),
-          bigBoldNums: _withColor(AppTextStyles.bigBoldNums),
+          bigNums: withColor(AppTextStyles.bigNums),
+          pBoldNums: withColor(AppTextStyles.pBoldNums),
+          bigBoldNums: withColor(AppTextStyles.bigBoldNums),
         ),
       ],
       fontFamily: AppTextStyles.fontFamily,
