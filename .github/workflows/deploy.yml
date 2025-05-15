@@ -35,8 +35,15 @@ jobs:
       - name: Download Dependencies
         run: flutter pub get
       
+      - name: Verify Fonts Directory
+        run: |
+          mkdir -p build/web/assets/fonts
+          cp -r assets/fonts/* build/web/assets/fonts/
+      
       - name: Build
-        run: flutter build web --base-href "/flutter-fonts-test/"
+        run: |
+          flutter build web --release --base-href "/flutter-fonts-test/"
+          cp -r assets/fonts/* build/web/assets/fonts/
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
