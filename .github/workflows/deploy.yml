@@ -27,7 +27,7 @@ jobs:
         run: flutter pub get
       
       - name: Build
-        run: flutter build web --base-href "/flutter-typography-demo/"
+        run: flutter build web --base-href "/flutter-fonts-test/"
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1

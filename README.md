@@ -4,7 +4,7 @@ A Flutter application showcasing typography styles using the Satoshi font family
 
 ## Live Demo 🌐
 
-Visit our [Live Typography Demo](https://YOUR_GITHUB_USERNAME.github.io/flutter-typography-demo) to preview all typography styles directly in your browser - no installation required!
+Visit our [Live Typography Demo](https://ivem77.github.io/flutter-fonts-test) to preview all typography styles directly in your browser - no installation required!
 
 The live demo showcases:
 - All text styles using the Satoshi font
