@@ -5,10 +5,16 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -16,6 +22,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
       
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
@@ -30,7 +39,7 @@ jobs:
         run: flutter build web --base-href "/flutter-fonts-test/"
       
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: './build/web'
           
@@ -44,4 +53,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2 
+        uses: actions/deploy-pages@v4 
