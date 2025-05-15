@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'theme/app_theme.dart';
 import 'theme/number_styles.dart';
+import 'pages/pricing_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -53,6 +54,17 @@ class TypographyDemo extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: const Color(0xFF06050F),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const PricingPage()),
+          );
+        },
+        backgroundColor: const Color(0xFF8961FA),
+        label: const Text('View Pricing'),
+        icon: const Icon(Icons.attach_money),
+      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(24),
         child: Column(
